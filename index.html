@@ -3,6 +3,7 @@
 
     <title>Angular 2 QuickStart</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
 
     <!-- 1. Load libraries -->
@@ -14,8 +15,11 @@
     <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/ng2-bootstrap/bundles/ng2-bootstrap.js"></script>
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
     <script src="node_modules/angular2/bundles/router.dev.js"></script>
+    <script src="node_modules/ng2-bootstrap/node_modules/moment/min/moment.min.js"></script>
+
     <base href="/">
     <!-- 2. Configure SystemJS -->
     <script>
@@ -25,8 +29,12 @@
                     format: 'register',
                     defaultExtension: 'js'
                 }
+            },
+            paths: {
+                'moment': 'node_modules/ng2-bootstrap/node_modules/moment/moment.js'
             }
         });
+
         System.import('app/main')
                 .then(null, console.error.bind(console));
     </script>
